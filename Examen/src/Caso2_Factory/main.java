@@ -26,9 +26,5 @@ public class main {
         
         Camisa para_prof = camisa.getCamiseta(Tipos.Manga_Corta,"S","Blanco","LOGO TEC");
         System.out.println(para_prof.toString());
-        
-        
-        
     }
-    
 }
