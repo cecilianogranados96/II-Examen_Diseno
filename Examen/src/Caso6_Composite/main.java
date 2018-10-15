@@ -8,19 +8,15 @@ package Caso6_Composite;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author Jose
  */
 public class main {
-        
-    
-        
+                
     public static void main(String[] args) {
 
-        
-        
-        
         String ciudad           = "SJO";
         String pais             = "CR";
         String codigo_postal    = "10601";
@@ -32,32 +28,27 @@ public class main {
         String apellido         = "Ceciliano";
         int edad                = 12;
         String password         = "jose123";
+ 
         
-        
+        Direccion address         = new Direccion (linea1, linea2, pais,ciudad, codigo_postal);
+        Info_Usuario info_usuario = new Info_Usuario(nombre, apellido, address, edad, password);
   
+         
+        List<Validar> lista = new ArrayList<Validar>();
 
-
-
-                
-        Direccion address = new Direccion (linea1, linea2, pais,ciudad, codigo_postal);
-        Info_Usuario newUserInfo = new Info_Usuario(nombre, apellido, address, edad, password);
-
-        Validar_Edad validar_Edad = new Validar_Edad();
-        Validar_Direccion validar_Direccion = new Validar_Direccion();
-        Validar_Nombre validar_nombre = new Validar_Nombre();
-        Validar_Password validar_Password = new Validar_Password();
+        lista.add(new Validar_Edad());
+        lista.add(new Validar_Direccion());
+        lista.add(new Validar_Nombre());
+        lista.add(new Validar_Password());
         
-          
-        List<String> errores_direccion = validar_Direccion.validar(newUserInfo);
-        List<String> errores_edad = validar_Edad.validar(newUserInfo);
-        List<String> errores_nombre = validar_nombre.validar(newUserInfo);        
-        List<String> errores_password = validar_Password.validar(newUserInfo);
-    
-        System.out.println(errores_direccion);
-        System.out.println(errores_edad);
-        System.out.println(errores_nombre);
-        System.out.println(errores_password);
         
+        Composite_Validar composite_Validar= new Composite_Validar(lista);
+        
+        List<String> errores = composite_Validar.validar(info_usuario);
+        
+        System.out.println(errores);
+
+      
     }
     
 

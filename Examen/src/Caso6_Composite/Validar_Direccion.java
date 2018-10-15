@@ -22,12 +22,12 @@ public class Validar_Direccion  implements Validar<Info_Usuario>  {
         if (direccion == null) {
             errores.add("Direccion Vacia");
         } else {
-            errores.addAll(validad_direccion(direccion));
+            errores.addAll(validar_direccion(direccion));
         }
         return errores;
     }
 
-    private List<String> validad_direccion(Direccion direccion) {
+    private List<String> validar_direccion(Direccion direccion) {
         List<String> errores = new ArrayList();
 
         if (direccion.getLinea1().isEmpty()) {
@@ -43,5 +43,5 @@ public class Validar_Direccion  implements Validar<Info_Usuario>  {
         }
         return errores;
     }
-    
+        
 }

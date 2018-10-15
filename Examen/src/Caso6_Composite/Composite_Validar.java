@@ -13,21 +13,19 @@ import java.util.List;
  * @author Jose
  */
 public class Composite_Validar<T> implements Validar<T> {
-    private final List<Validar<T>> validators;
+    private final List<Validar<T>> validadores;
 
-    public Composite_Validar(List<Validar<T>> validators) {
-        this.validators = validators;
+    public Composite_Validar(List<Validar<T>> validadores) {
+        this.validadores = validadores;
     }
 
     @Override
     public List<String> validar(T info) {
-        List<String> errors = new ArrayList();
-
-        for (Validar validator : validators) {
-            errors.addAll(validator.validar(info));
+        List<String> errores = new ArrayList();
+        for (Validar validator : validadores) {
+            errores.addAll(validator.validar(info));
         }
-        
-        return errors;
+        return errores;
     }
 
 }
