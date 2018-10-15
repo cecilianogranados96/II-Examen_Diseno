@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Caso2_Prototype;
+package Caso2_Factory;
 
 /**
  *
  * @author Jose
  */
-public class main {
-
-
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //Example repo
-    }
-    
+public enum Tipos {
+    Manga_Larga,Manga_Corta
 }
