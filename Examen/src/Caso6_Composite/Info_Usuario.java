@@ -10,50 +10,50 @@ package Caso6_Composite;
  * @author Jose
  */
 public class Info_Usuario {
-    private String name;
-    private String surname;
-    private Direccion address;
-    private int age;
+    private String nombre;
+    private String apellido;
+    private Direccion direccion;
+    private int edad;
     private String password;
 
-    public Info_Usuario(String name, String surname, Direccion address, int age, String password) {
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.age = age;
+    public Info_Usuario(String nombre, String apellido, Direccion direccion, int edad, String password) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.edad = edad;
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public Direccion getAddress() {
-        return address;
+    public Direccion getDireccion() {
+        return direccion;
     }
 
-    public void setAddress(Direccion address) {
-        this.address = address;
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
-    public int getAge() {
-        return age;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getPassword() {

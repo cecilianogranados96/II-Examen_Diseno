@@ -13,17 +13,13 @@ import java.util.List;
  * @author Jose
  */
 public class Validar_Edad implements Validar<Info_Usuario> {
-    
-    
+   
      public List<String> validar(Info_Usuario info) {
-        List<String> errors = new ArrayList();
-
-        int age = info.getAge();
-
-        if (age < 18) {
-            errors.add("Menor de edad");
+        List<String> errores = new ArrayList();
+        if (info.getEdad() < 18) {
+            errores.add("Menor de edad");
         }
         
-        return errors;
+        return errores;
     }
 }

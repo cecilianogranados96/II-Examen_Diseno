@@ -16,39 +16,32 @@ import java.util.List;
 public class Validar_Direccion  implements Validar<Info_Usuario>  {
      @Override
     public List<String> validar(Info_Usuario info) {
-        List<String> errors = new ArrayList();
+        List<String> errores = new ArrayList();
 
-        Direccion address = info.getAddress();
-
-        if (address == null) {
-            errors.add("Direccion Vacia");
+        Direccion direccion = info.getDireccion();
+        if (direccion == null) {
+            errores.add("Direccion Vacia");
         } else {
-            errors.addAll(validateAddress(address));
-
+            errores.addAll(validad_direccion(direccion));
         }
-        
-        return errors;
+        return errores;
     }
 
-    private List<String> validateAddress(Direccion address) {
-        List<String> errors = new ArrayList();
-        
-        String line1 = address.getLinea1();
-        String city = address.getCiudad();
-        String postcode = address.getCodigo_postal();
+    private List<String> validad_direccion(Direccion direccion) {
+        List<String> errores = new ArrayList();
 
-        if (line1.isEmpty()) {
-            errors.add("Linea 1 Vacio");
+        if (direccion.getLinea1().isEmpty()) {
+            errores.add("Linea 1 Vacio");
         }
 
-        if (city.isEmpty()) {
-            errors.add("Ciudad Vacio");
+        if (direccion.getCiudad().isEmpty()) {
+            errores.add("Ciudad Vacio");
         }
 
-        if (postcode.isEmpty()) {
-            errors.add("Codigo Postal Vacio");
+        if (direccion.getCodigo_postal().isEmpty()) {
+            errores.add("Codigo Postal Vacio");
         }
-        return errors;
+        return errores;
     }
     
 }

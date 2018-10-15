@@ -14,8 +14,12 @@ import java.util.List;
  */
 public class main {
         
+    
+        
     public static void main(String[] args) {
 
+        
+        
         
         String ciudad           = "SJO";
         String pais             = "CR";
@@ -30,12 +34,11 @@ public class main {
         String password         = "jose123";
         
         
+  
 
-        
-        
-        
-      
-        
+
+
+                
         Direccion address = new Direccion (linea1, linea2, pais,ciudad, codigo_postal);
         Info_Usuario newUserInfo = new Info_Usuario(nombre, apellido, address, edad, password);
 

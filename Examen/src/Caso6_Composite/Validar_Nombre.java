@@ -16,20 +16,17 @@ import java.util.List;
 public class Validar_Nombre  implements Validar<Info_Usuario> {
     
      public List<String> validar(Info_Usuario info) {
-        List<String> errors = new ArrayList();
-
-        String name = info.getName();
-        String surname = info.getSurname();
-
-        if (name.isEmpty()) {
-            errors.add("Nombre Vacio");
+        List<String> errores = new ArrayList();
+        
+        if (info.getNombre().isEmpty()) {
+            errores.add("Nombre Vacio");
         }
         
-        if (surname.isEmpty()) {
-            errors.add("Apellido Vacio");
+        if (info.getApellido().isEmpty()) {
+            errores.add("Apellido Vacio");
         }
         
-        return errors;
+        return errores;
     }
      
      

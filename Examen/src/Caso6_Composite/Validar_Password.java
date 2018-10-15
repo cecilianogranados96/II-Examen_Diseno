@@ -19,15 +19,11 @@ public class Validar_Password implements Validar<Info_Usuario>  {
 
     @Override
     public List<String> validar(Info_Usuario info) {
-        List<String> errors = new ArrayList();
-
-        String password = info.getPassword();
-
-        if (password.isEmpty()) {
-            errors.add("Password Vacio");
+        List<String> errores = new ArrayList();
+        if (info.getPassword().isEmpty()) {
+            errores.add("Password Vacio");
         }
-        
-        return errors;
+        return errores;
     }
     
     
